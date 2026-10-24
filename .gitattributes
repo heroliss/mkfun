@@ -4,4 +4,4 @@
 *.css text eol=lf
 *.json text eol=lf
 *.md text eol=lf
-legacy/v4.5/*.py -text
+legacy/v4.5/*.py -text whitespace=cr-at-eol
