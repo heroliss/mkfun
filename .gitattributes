@@ -1,0 +1,7 @@
+*.py text eol=lf
+*.mjs text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+legacy/v4.5/*.py -text

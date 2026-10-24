@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mkfun"
+version = "5.0.0"
+description = "Compile nested example structures into explainable data mappings."
+requires-python = ">=3.10"
+authors = [{name = "Liss"}]
+
+[project.scripts]
+mkfun = "mkfun.__main__:main"
+
+[tool.setuptools]
+packages = ["mkfun"]
+py-modules = ["ss", "ss_di"]

@@ -1,0 +1,13 @@
+[
+  {"name":"profile","from":["姓名","城市","技能"],"to":{"profile":{"name":"姓名","city":"城市"},"skills":["技能"],"active":true},"input":["Liss","上海","Unity"],"expected":{"profile":{"name":"Liss","city":"上海"},"skills":["Unity"],"active":true},"validate":true},
+  {"name":"transpose","from":[["a","b","c"],["d","e","f"]],"to":[["a","d"],["b","e"],["c","f"]],"input":[[12,24,36],[48,60,72]],"expected":[[12,48],[24,60],[36,72]],"validate":true},
+  {"name":"key-and-value","from":{"key":"value"},"to":["key","value"],"input":{"new-key":"new-value"},"expected":["new-key","new-value"],"validate":true},
+  {"name":"repeat-and-constant","from":["a","b"],"to":["b","a","a",null,100],"input":[false,true],"expected":[true,false,false,null,100],"validate":true},
+  {"name":"boolean-not-number","from":[true,1,"1"],"to":["1",true,1.0],"input":["boolean","number","text"],"expected":["text","boolean","number"],"validate":true},
+  {"name":"empty","from":[],"to":{"empty":[],"nested":{}},"input":[],"expected":{"empty":[],"nested":{}},"validate":false},
+  {"name":"no-code-execution","from":["token"],"to":{"literal":"__import__('os').system('never') # [ ]","data":"token"},"input":["<img src=x onerror=alert(1)>"],"expected":{"literal":"__import__('os').system('never') # [ ]","data":"<img src=x onerror=alert(1)>"},"validate":true},
+  {"name":"prototype-key","from":["token"],"to":{"__proto__":"token","constructor":"fixed"},"input":["data"],"expected":{"__proto__":"data","constructor":"fixed"},"validate":true},
+  {"name":"shape-error","from":["a","b"],"to":["b"],"input":[[1],2],"error":true},
+  {"name":"roundtrip-loss","from":["a","b"],"to":["a"],"input":[1,2],"error":true,"validate":true},
+  {"name":"key-collision","from":["a","b"],"to":{"a":0,"b":1},"input":["same","same"],"error":true}
+]
